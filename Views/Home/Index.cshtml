@@ -1,0 +1,62 @@
+﻿@model DojoSurveyVal.Models.SurveyViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <title>Dojo Survey</title>
+</head>
+
+<body>
+    <h1>Dojo Survey Date</h1>
+    <form asp-action="Submit" method="post">
+        <div class="info-box">
+            <label for="name">Your Name:</label>
+            <input asp-for="Name" id="name" required /><br>
+            <span asp-validation-for="Name"></span>
+
+            <label for="location">Dojo Location:</label>
+            <select asp-for="Location" id="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Atlanta">Atlanta</option>
+                <option value="Florida">Florida</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Louisiana">Louisiana</option>
+            </select><br>
+            <span asp-validation-for="Location"></span>
+
+            <label for="language">Favorite Language:</label>
+            <select asp-for="FavoriteLanguage" id="language">
+                <option value="C#">C#</option>
+                <option value="C++">C++</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+            </select><br>
+            <span asp-validation-for="FavoriteLanguage"></span>
+
+            <label for="comment">Comment (optional):</label>
+            <textarea asp-for="Comment" id="comment"></textarea><br>
+            <span asp-validation-for="Comment"></span>
+
+            <label for="surveyDate">Survey Date:</label>
+            <input asp-for="SurveyDate" type="date" id="surveyDate" required /><br>
+            <span asp-validation-for="SurveyDate"></span>
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
